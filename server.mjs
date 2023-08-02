@@ -36,7 +36,8 @@ app.get("/todos", async (req, res, next) => {
 
 app.post("/todo", async (req, res, next) => {
     const todo = await Todo.create({
-        todo: req.body.todo
+        todo: req.body.todo,
+        date : req.body.date
     })
     res.status(200).send({
         message: "Todo Created",
